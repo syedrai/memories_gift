@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1a1a1a, #050505);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* floating particles */
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 105, 180, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moveBg 30s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveBg {
+  from { transform: translate(0,0); }
+  to { transform: translate(-200px,-200px); }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+  color: #ff7aa8;
+  margin-bottom: 10px;
+  animation: fadeDown 1s ease;
+}
+
+.subtitle {
+  text-align: center;
+  opacity: 0.6;
+  margin-bottom: 60px;
+  animation: fadeDown 1.2s ease;
+}
+
+/* timeline */
+.timeline {
+  border-left: 2px solid rgba(255, 192, 203, 0.3);
+  padding-left: 20px;
+}
+
+.block {
+  margin-bottom: 50px;
+  padding: 20px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,192,203,0.1);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.block.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.block h2 {
+  color: #ff7aa8;
+  margin-bottom: 10px;
+}
+
+.block p {
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* glow hover */
+.block:hover {
+  box-shadow: 0 0 20px rgba(255,105,180,0.15);
+}
+
+/* footer */
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+/* animations */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">Our Story</div>
+<div class="subtitle">Not just memories… something that stayed.</div>
+
+<div class="timeline">
+
+<div class="block">
+<h2>The Beginning</h2>
+<p>
+Palamalai trip… I noticed you before I even knew you.  
+Not your face… just a quiet presence.
+</p>
+</div>
+
+<div class="block">
+<h2>Different Worlds</h2>
+<p>
+You saw confidence.  
+I saw silence.  
+Somehow… that contrast became the reason we connected.
+</p>
+</div>
+
+<div class="block">
+<h2>Not Just Mentorship</h2>
+<p>
+It started with guidance…  
+but I didn’t want something temporary.  
+So I changed it.
+</p>
+</div>
+
+<div class="block">
+<h2>When It Became Real</h2>
+<p>
+One breakdown… one conversation…  
+and suddenly, you weren’t just someone I help.
+</p>
+</div>
+
+<div class="block">
+<h2>What You Changed</h2>
+<p>
+You brought back trust.  
+Something I didn’t expect to feel again.
+</p>
+</div>
+
+<div class="block">
+<h2>What This Is</h2>
+<p>
+Mentor → Friend → Best Friend  
+</p>
+</div>
+
+<div class="block">
+<h2>Forward</h2>
+<p>
+No matter what changes…  
+this stays.
+</p>
+</div>
+
+</div>
+
+<div class="footer">
+Some things aren’t visible… unless you look deeper.
+</div>
+
+</div>
+
+<!-- aHR0cHM6Ly9...YOUR_BASE64_ZIP_LINK... -->
+
+<script>
+const blocks = document.querySelectorAll(".block");
+
+window.addEventListener("scroll", () => {
+  blocks.forEach(block => {
+    const top = block.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      block.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
